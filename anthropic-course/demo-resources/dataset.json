@@ -1,0 +1,35 @@
+[
+    {
+        "task": "Generate a CloudFormation template snippet in JSON that creates an S3 bucket named `my-unique-bucket-{account-id}` with versioning enabled and public read access blocked.",
+        "format": "json",
+        "solution_criteria": [
+            "The output must be valid JSON.",
+            "It should contain a single resource of type `AWS::S3::Bucket`.",
+            "The bucket name must include the placeholder `{account-id}` exactly as shown.",
+            "VersioningConfiguration must enable versioning.",
+            "PublicAccessBlockConfiguration must block all public access."
+        ]
+    },
+    {
+        "task": "Write a Python function `list_ec2_instances(region)` that returns a list of instance IDs for all running EC2 instances in the given AWS region using Boto3. Assume the caller has proper credentials and permissions.",
+        "format": "python",
+        "solution_criteria": [
+            "The function must be named exactly `list_ec2_instances` and accept one parameter `region`.",
+            "It should use `boto3.client('ec2', region_name=region)` to create the client.",
+            "Only instances with state 'running' should be included in the returned list.",
+            "The function must return a plain Python list of strings (instance IDs).",
+            "No additional output or prints are allowed."
+        ]
+    },
+    {
+        "task": "Create a regular expression that matches an AWS IAM role ARN. The regex should capture the account ID and the role name in separate groups.",
+        "format": "regex",
+        "solution_criteria": [
+            "The regex must match strings of the form `arn:aws:iam::123456789012:role/MyRoleName`.",
+            "Group 1 must contain the 12‑digit AWS account ID.",
+            "Group 2 must contain the role name (any characters except `/`).",
+            "It should not match ARNs that are not IAM roles.",
+            "The regex should be written in Python syntax (raw string notation is optional)."
+        ]
+    }
+]
